@@ -1,6 +1,7 @@
-import { ImageWritterModule } from 'image-writter';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ImageWriterModule } from 'image-writer';
 
 import { AppComponent } from './app.component';
 
@@ -10,7 +11,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    ImageWritterModule
+    ImageWriterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImageWritterComponent } from './image-writter.component';
+import { ImageWriterComponent } from './image-writer.component';
 
-describe('ImageWritterComponent', () => {
-  let component: ImageWritterComponent;
-  let fixture: ComponentFixture<ImageWritterComponent>;
+describe('ImageWriterComponent', () => {
+  let component: ImageWriterComponent;
+  let fixture: ComponentFixture<ImageWriterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ImageWritterComponent ]
+      declarations: [ ImageWriterComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ImageWritterComponent);
+    fixture = TestBed.createComponent(ImageWriterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

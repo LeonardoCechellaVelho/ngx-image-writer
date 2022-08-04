@@ -8,9 +8,9 @@
     "strict": true,
     "noImplicitOverride": true,
     "paths": {
-      "image-writter": [
-        "dist/image-writter/image-writter",
-        "dist/image-writter"
+      "image-writer": [
+        "dist/image-writer/image-writer",
+        "dist/image-writer"
       ]
     },
     "noPropertyAccessFromIndexSignature": true,

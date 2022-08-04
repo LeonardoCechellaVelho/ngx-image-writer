@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "image-writter": {
+    "image-writer": {
       "projectType": "library",
-      "root": "projects/image-writter",
-      "sourceRoot": "projects/image-writter/src",
+      "root": "projects/image-writer",
+      "sourceRoot": "projects/image-writer/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/image-writter/ng-package.json"
+            "project": "projects/image-writer/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/image-writter/tsconfig.lib.prod.json"
+              "tsConfig": "projects/image-writer/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/image-writter/tsconfig.lib.json"
+              "tsConfig": "projects/image-writer/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,14 +27,14 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/image-writter/src/test.ts",
-            "tsConfig": "projects/image-writter/tsconfig.spec.json",
-            "karmaConfig": "projects/image-writter/karma.conf.js"
+            "main": "projects/image-writer/src/test.ts",
+            "tsConfig": "projects/image-writer/tsconfig.spec.json",
+            "karmaConfig": "projects/image-writer/karma.conf.js"
           }
         }
       }
     },
-    "image-writter-demo": {
+    "image-writer-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -44,25 +44,25 @@
           "strict": true
         }
       },
-      "root": "projects/image-writter-demo",
-      "sourceRoot": "projects/image-writter-demo/src",
+      "root": "projects/image-writer-demo",
+      "sourceRoot": "projects/image-writer-demo/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/image-writter-demo",
-            "index": "projects/image-writter-demo/src/index.html",
-            "main": "projects/image-writter-demo/src/main.ts",
-            "polyfills": "projects/image-writter-demo/src/polyfills.ts",
-            "tsConfig": "projects/image-writter-demo/tsconfig.app.json",
+            "outputPath": "dist/image-writer-demo",
+            "index": "projects/image-writer-demo/src/index.html",
+            "main": "projects/image-writer-demo/src/main.ts",
+            "polyfills": "projects/image-writer-demo/src/polyfills.ts",
+            "tsConfig": "projects/image-writer-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/image-writter-demo/src/favicon.ico",
-              "projects/image-writter-demo/src/assets"
+              "projects/image-writer-demo/src/favicon.ico",
+              "projects/image-writer-demo/src/assets"
             ],
             "styles": [
-              "projects/image-writter-demo/src/styles.scss"
+              "projects/image-writer-demo/src/styles.scss"
             ],
             "scripts": []
           },
@@ -82,8 +82,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "projects/image-writter-demo/src/environments/environment.ts",
-                  "with": "projects/image-writter-demo/src/environments/environment.prod.ts"
+                  "replace": "projects/image-writer-demo/src/environments/environment.ts",
+                  "with": "projects/image-writer-demo/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -103,10 +103,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "image-writter-demo:build:production"
+              "browserTarget": "image-writer-demo:build:production"
             },
             "development": {
-              "browserTarget": "image-writter-demo:build:development"
+              "browserTarget": "image-writer-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -114,23 +114,23 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "image-writter-demo:build"
+            "browserTarget": "image-writer-demo:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/image-writter-demo/src/test.ts",
-            "polyfills": "projects/image-writter-demo/src/polyfills.ts",
-            "tsConfig": "projects/image-writter-demo/tsconfig.spec.json",
-            "karmaConfig": "projects/image-writter-demo/karma.conf.js",
+            "main": "projects/image-writer-demo/src/test.ts",
+            "polyfills": "projects/image-writer-demo/src/polyfills.ts",
+            "tsConfig": "projects/image-writer-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/image-writer-demo/karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/image-writter-demo/src/favicon.ico",
-              "projects/image-writter-demo/src/assets"
+              "projects/image-writer-demo/src/favicon.ico",
+              "projects/image-writer-demo/src/assets"
             ],
             "styles": [
-              "projects/image-writter-demo/src/styles.scss"
+              "projects/image-writer-demo/src/styles.scss"
             ],
             "scripts": []
           }
@@ -138,5 +138,5 @@
       }
     }
   },
-  "defaultProject": "image-writter"
+  "defaultProject": "image-writer"
 }
