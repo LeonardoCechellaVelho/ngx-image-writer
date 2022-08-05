@@ -2,7 +2,7 @@
   "name": "ngx-image-writer",
   "version": "1.0.0",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com@leonardocechellavelho"
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": "https://github.com/LeonardoCechellaVelho/ngx-image-writer.git",
   "scripts": {
