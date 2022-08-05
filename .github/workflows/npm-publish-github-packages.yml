@@ -12,36 +12,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: 16
       - run: npm ci
+      - run: npm run imagewriterbuild
 
-  publish-gpr:
+  publish-npm:
+    name: Publish NPM
     runs-on: ubuntu-latest
     steps:
-    - name: "Setup actions"
-      uses: actions/checkout@v3
-
-    - name: "npm/registry setup"
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
-        registry-url: https://npm.pkg.github.com/
-        scope: "@leonardocechellavelho"
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GPR_TOKEN }}
-        
-    - name: "Build library"
-      run: |
-        npm install
-        npm run imagewriterbuild
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GPR_TOKEN }}
-        
-    - name: "npm try to publish the package if it's a new version"
-      continue-on-error: true
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GPR_TOKEN }}
-      run: npm publish
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
