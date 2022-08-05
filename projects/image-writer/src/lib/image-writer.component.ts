@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { NgxImageWriter } from './image-writer.model';
+import { NgxImageWriterFields, NgxImageWriterOptions } from './image-writer.model';
 
 @Component({
   selector: 'lib-image-writer',
@@ -13,10 +13,7 @@ import { NgxImageWriter } from './image-writer.model';
 })
 export class ImageWriterComponent implements OnInit {
   @ViewChild('imageWriterCanvas', { static: true }) imageWriterCanvas!: ElementRef;
-  @Input('backgroundImage') backgroundImage!: string;
-  @Input('width') imageWidth!: number;
-  @Input('height') imageHeight!: number;
-  @Input('fields') fields!: NgxImageWriter[];
+  @Input('options') options!: NgxImageWriterOptions;
 
   divImgWriter!: HTMLElement | null;
 
@@ -29,38 +26,39 @@ export class ImageWriterComponent implements OnInit {
   }
 
   setCanvasStyles(ctx: any) {
-    ctx.canvas.style.background = 'url(' + this.backgroundImage + ')';
-    ctx.canvas.width = this.imageWidth;
-    ctx.canvas.height = this.imageHeight;
+    ctx.canvas.style.background = 'url(' + this.options.backgroundImage + ')';
+    ctx.canvas.width = this.options.imageWidth;
+    ctx.canvas.height = this.options.imageHeight;
     ctx.canvas.style.backgroundSize = '100% 100%';
   }
 
   createDivs(ctx: any) {
-    this.fields.map(field => {
+    this.options.fields.map((field: NgxImageWriterFields) => {
+      const maxWidth = field.lineWidth ? field.lineWidth : this.options.imageWidth;
       ctx.font = field.font;
       ctx.textAlign = field.textAlign;
-      this.breakLines(ctx, field.content, field.x, field.y, this.imageWidth, field.lineSize);
+      this.breakLines(ctx, field.content, field.x, field.y, maxWidth, field.lineHeight);
     });
   }
 
   breakLines(context: { measureText: (arg0: string) => any; fillText: (arg0: string, arg1: any, arg2: any) => void; }, text: string, x: any, y: any, maxWidth: number, lineHeight: any) {
     var words = text.split(' ');
-        var line = '';
+    var line = '';
 
-        for(var n = 0; n < words.length; n++) {
-          var testLine = line + words[n] + ' ';
-          var metrics = context.measureText(testLine);
-          var testWidth = metrics.width;
-          if (testWidth > maxWidth && n > 0) {
-            context.fillText(line, x, y);
-            line = words[n] + ' ';
-            y += lineHeight;
-          }
-          else {
-            line = testLine;
-          }
-        }
+    for(var n = 0; n < words.length; n++) {
+      var testLine = line + words[n] + ' ';
+      var metrics = context.measureText(testLine);
+      var testWidth = metrics.width;
+      if (testWidth > maxWidth && n > 0) {
         context.fillText(line, x, y);
+        line = words[n] + ' ';
+        y += lineHeight;
+      }
+      else {
+        line = testLine;
+      }
+    }
+    context.fillText(line, x, y);
   }
 
 }
