@@ -11,7 +11,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "imagewriterbuild": "ng build image-writer && cd dist/image-writer && npm publish --registry=https://npm.pkg.github.com@leonardocechellavelho"
+    "imagewriterbuild": "ng build image-writer"
   },
   "private": false,
   "dependencies": {
