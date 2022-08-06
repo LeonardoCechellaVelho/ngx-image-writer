@@ -2,7 +2,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { NgxImageWriterFields, NgxImageWriterOptions } from './image-writer.model';
 
 @Component({
-  selector: 'lib-image-writer',
+  selector: 'image-writer',
   template: `
     <div id="image-writer">
       <canvas #imageWriterCanvas>
@@ -26,7 +26,8 @@ export class ImageWriterComponent implements OnInit {
   }
 
   setCanvasStyles(ctx: any) {
-    ctx.canvas.style.background = 'url(' + this.options.backgroundImage + ')';
+    if (this.options.backgroundImage)
+      ctx.canvas.style.background = 'url(' + this.options.backgroundImage + ')';
     ctx.canvas.width = this.options.imageWidth;
     ctx.canvas.height = this.options.imageHeight;
     ctx.canvas.style.backgroundSize = '100% 100%';
