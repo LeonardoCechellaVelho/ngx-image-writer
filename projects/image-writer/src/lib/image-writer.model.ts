@@ -1,5 +1,5 @@
 export interface NgxImageWriterOptions {
-    backgroundImage: string,
+    backgroundImage?: string,
     imageWidth: number,
     imageHeight: number,
     fields: NgxImageWriterFields[]
