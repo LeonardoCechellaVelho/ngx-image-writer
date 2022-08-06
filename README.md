@@ -1,4 +1,4 @@
-<h1 align="center">Ngx-image-writer</h1>
+<h1 align="center">Ngx Image Writer</h1>
 
 <p align="center">
 Simple library to write in images for <a href="https://angular.io/">Angular</a>
