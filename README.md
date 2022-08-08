@@ -6,7 +6,7 @@ Simple library to write in images for <a href="https://angular.io/">Angular</a>
 
 
 <p align="center">
-<a href="https://www.npmjs.com/package/ngx-image-writer"><img src="https://img.shields.io/badge/dynamic/json?color=brightgreen&label=npm%20package&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fleonardocechellavelho%2Fngx-image-writer%2Fmaster%2Fpackage.json&style=for-the-badge"></a>
+<a href="https://www.npmjs.com/package/image-writer"><img src="https://img.shields.io/badge/dynamic/json?color=brightgreen&label=npm%20package&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fleonardocechellavelho%2Fngx-image-writer%2Fmaster%2Fpackage.json&style=for-the-badge"></a>
 <a href="https://github.com/LeonardoCechellaVelho/ngx-image-writer/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/LeonardoCechellaVelho/ngx-image-writer?color=%23f86a08&style=for-the-badge"></a>
 </p>
 
